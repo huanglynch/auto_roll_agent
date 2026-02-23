@@ -21,7 +21,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # ==================== 配置 ====================
-with open('/home/ibkr/config.json') as f:
+with open('/home/ibkr/auto_roll_config.json') as f:
     CONFIG = json.load(f)
 
 AUTO = CONFIG.get('auto_roll', {'enabled': False})
@@ -56,7 +56,7 @@ async def get_grok_decision():
 }}"""
 
     payload = {
-        "model": "grok-4-1-fast",
+        "model": "grok-4-1-fast-reasoning",
         "messages": [{"role": "system", "content": system_prompt}],
         "response_format": {"type": "json_schema", "json_schema": {
             "name": "roll_decision",
