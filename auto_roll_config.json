@@ -1,0 +1,27 @@
+{
+  "holdings": [
+    { "expiry": "2026-04-17", "strike": 455, "qty": 2, "type": "Call" },
+    { "expiry": "2026-06-19", "strike": 515, "qty": 1, "type": "Call" }
+  ],
+  "roll_trigger": {
+    "daily_rise_percent": 10,
+    "price_over_farthest_percent": 5
+  },
+  "auto_roll": {
+    "enabled": false,                    // 先保持 false 测试
+    "paper_trading": true,               // 强烈建议先开纸交易
+    "only_on_friday": true,
+    "max_contracts": 2,
+    "min_net_credit": 0.10,
+    "max_delta": 0.30,
+    "margin_safety_ratio": 150,
+    "require_xai_approval": true,
+    "notify_after_trade": true,
+    "dry_run": true,                     // 测试时保持 true
+    "ibkr": {
+      "account": "DU1234569",            // ← 改成你的 IBKR 账户号
+      "port": 7497,
+      "host": "127.0.0.1"
+    }
+  }
+}
